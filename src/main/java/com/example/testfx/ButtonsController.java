@@ -9,16 +9,11 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ButtonsController implements Initializable {
-    @FXML
-    private Label display;
-
-    private int realDisplay = 0;
+public class ButtonsController implements Initializable {private int realDisplay = 0;
 
     private int numOne = 0;
 
@@ -29,6 +24,9 @@ public class ButtonsController implements Initializable {
     private CalculatorMode CalcMode = CalculatorMode.ADD;
 
     private boolean EditOne = true;
+
+    @FXML
+    private Label display;
 
     @FXML
     private Button one;
