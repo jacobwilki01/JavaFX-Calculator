@@ -9,6 +9,9 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ButtonsController implements Initializable {
@@ -78,7 +81,7 @@ public class ButtonsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb)
     {
         display.setText("0");
-        display.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 25));
+        display.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 35));
 
         zero.setOnAction(e -> numChange(0));
         one.setOnAction(e -> numChange(1));
@@ -90,6 +93,10 @@ public class ButtonsController implements Initializable {
         seven.setOnAction(e -> numChange(7));
         eight.setOnAction(e -> numChange(8));
         nine.setOnAction(e -> numChange(9));
+
+        List<Button> buttons = Arrays.asList(zero, one, two, three, four, five, six, seven, eight, nine, add, subtract, multiply, divide, equals, clear);
+        for (Button button : buttons)
+            button.setStyle("-fx-font-size:30");
 
         add.setOnAction(e -> modeChange(CalculatorMode.ADD));
         subtract.setOnAction(e -> modeChange(CalculatorMode.SUBTRACT));
